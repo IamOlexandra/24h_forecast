@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/24h_forecast/static/css/main.144e032d.css",
+    "main.js": "/24h_forecast/static/js/main.1924e67d.js",
+    "static/js/453.321b178f.chunk.js": "/24h_forecast/static/js/453.321b178f.chunk.js",
+    "index.html": "/24h_forecast/index.html",
+    "main.144e032d.css.map": "/24h_forecast/static/css/main.144e032d.css.map",
+    "main.1924e67d.js.map": "/24h_forecast/static/js/main.1924e67d.js.map",
+    "453.321b178f.chunk.js.map": "/24h_forecast/static/js/453.321b178f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.144e032d.css",
+    "static/js/main.1924e67d.js"
+  ]
+}
