@@ -9,18 +9,21 @@ export const StyledSignUp = styled.div`
         export const StyledTitle = styled.h2`
         
         `;
-        export const StyledWrap = styled.div`
+        export const StyledForm = styled.form`
         
         `;
-            export const StyledLabel = styled.label`
+            export const StyledWrap = styled.div`
             
             `;
-            export const StyledInput = styled.input`
+                export const StyledLabel = styled.label`
+                
+                `;
+                export const StyledInput = styled.input`
+                
+                `;
+            export const StyledButton = styled.button`
             
             `;
-        export const StyledButton = styled.button`
-        
-        `;
         export const StyledText = styled.p`
         
         `;

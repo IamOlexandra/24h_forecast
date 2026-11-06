@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import { StyledButton, StyledButtonPlacing, StyledButtonWrap, StyledItem, StyledLocation, StyledLocationText, StyledOptions, StyledOptionsIconButton, StyledOptionsIconWrap, StyledTemperature, StyledWeatherIconWrap } from "./styled.js";
+import { WiThunderstorm, WiRainMix, WiRain, WiSnow, WiFog, WiStrongWind, WiTornado, WiDaySunny, WiCloudy, WiNa } from "react-icons/wi";
 
-export default function CitiesItem({city, country, weather, temperature}) {
+export default function CitiesItem({detailsClick, hourlyClick, dailyClick, city, country, weather, temperature}) {
   return (
     <StyledItem>
       <StyledLocation>
@@ -12,14 +14,24 @@ export default function CitiesItem({city, country, weather, temperature}) {
         </StyledLocationText>
       </StyledLocation>
       <StyledButtonWrap>
-        <StyledButton type="button">Hourly forecast</StyledButton>
-        <StyledButton type="button">Weekly forecast</StyledButton>
+        <StyledButton type="button" onClick={hourlyClick}>Hourly forecast</StyledButton>
+        <StyledButton type="button" onClick={dailyClick}>Weekly forecast</StyledButton>
       </StyledButtonWrap>
       <StyledWeatherIconWrap>
-        {weather} //FIX!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        {weather === "Thunderstorm" ? (<WiThunderstorm/>) :
+          weather === "Drizzle" ? (<WiRainMix/>) :
+          weather === "Rain" ? (<WiRain/>) :
+          weather === "Snow" ? (<WiSnow/>) :
+          weather === "Mist" || weather === "Smoke" || weather === "Haze" || weather === "Dust" || weather === "Fog" || weather === "Sand" || weather === "Ash" ? (<WiFog/>) :
+          weather === "Squall" ? (<WiStrongWind/>) :
+          weather === "Tornado" ? (<WiTornado/>) :
+          weather === "Clear" ? (<WiDaySunny/>) :
+          weather === "Clouds" ? (<WiCloudy/>) :
+          (<WiNa/>)
+        }
       </StyledWeatherIconWrap>
       <StyledTemperature>
-        {temperature} ℃
+        {Math.round(temperature)}°C
       </StyledTemperature>
       <StyledOptions>
         <StyledButtonPlacing>
@@ -34,7 +46,7 @@ export default function CitiesItem({city, country, weather, temperature}) {
             </StyledOptionsIconWrap>
           </StyledOptionsIconButton>
         </StyledButtonPlacing>
-        <StyledButton type="button">See more</StyledButton>
+        <StyledButton type="button" onClick={detailsClick}>See more</StyledButton>
         <StyledOptionsIconButton>
           <StyledOptionsIconWrap>
             

@@ -1,9 +1,10 @@
-import { StyledAccount, StyledButton, StyledHeader, StyledIconWrap, StyledItem, StyledLink, StyledList, StyledLogo, StyledLogoLink, StyledNavigation } from "./styled.js";
+import { StyledAccount, StyledButton, StyledHeader, StyledIconWrap, StyledItem, StyledLink, StyledList, StyledLogo, StyledLogoLink, StyledNavigation, StyledUsername } from "./styled.js";
 import logo from "../../images/logo.png";
 import { IoIosPerson } from "react-icons/io";
 import { IconContext } from "react-icons";
+import { useState } from "react";
 
-export default function Header({openModal}) {
+export default function Header({openModal, username}) {
   return (
     <StyledHeader className="container">
       <StyledNavigation>
@@ -23,7 +24,7 @@ export default function Header({openModal}) {
         </StyledList>
       </StyledNavigation>
       <StyledAccount>
-        <StyledButton type="button" onClick={() => openModal()}>Sign Up</StyledButton>
+        {username ? (<StyledUsername>{username}</StyledUsername>) : (<StyledButton type="button" onClick={() => openModal()}>Sign Up</StyledButton>)}
         <StyledIconWrap>
           <IconContext.Provider value={{ color: "#e7eced"}}>
             <IoIosPerson/>

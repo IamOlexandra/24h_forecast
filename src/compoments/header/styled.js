@@ -27,6 +27,9 @@ export const StyledHeader = styled.section`
         export const StyledButton = styled.button`
             
         `;
+        export const StyledUsername = styled.p`
+            
+        `;
         export const StyledIconWrap = styled.div`
             
         `;

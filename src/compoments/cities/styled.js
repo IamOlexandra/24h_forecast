@@ -12,12 +12,10 @@ export const StyledCities = styled.section`
             export const StyledLocationText = styled.p`
             
             `;
+        
         export const StyledButtonWrap = styled.div`
         
         `;
-            export const StyledButton = styled.button`
-            
-            `;
         export const StyledWeatherIconWrap = styled.div`
             
         `;
@@ -30,6 +28,9 @@ export const StyledCities = styled.section`
         export const StyledButtonPlacing = styled.div`
             
         `;
+            export const StyledButton = styled.button`
+            
+            `;
             export const StyledOptionsIconButton = styled.button`
                 
             `;
