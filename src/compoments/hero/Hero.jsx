@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { StyledButton, StyledDate, StyledHero, StyledIconWrap, StyledInput, StyledInputWrap, StyledText, StyledTitle, StyledWrap } from "./styled.js";
 import { IoSearch } from "react-icons/io5";
+import { IconContext } from "react-icons";
 
 export default function Hero({getCity}) {
   const [currentDate, setCurrentDate] = useState(Date());
@@ -19,7 +20,9 @@ export default function Hero({getCity}) {
           <StyledInput ref={inputRef} placeholder="Search location..."/>
           <StyledButton onClick={() => getCity(inputRef.current.value)}>
             <StyledIconWrap>
-              <IoSearch/>
+              <IconContext.Provider value={{ size: "30px" }}>
+                <IoSearch/>
+              </IconContext.Provider>
             </StyledIconWrap>
           </StyledButton>
         </StyledInputWrap>

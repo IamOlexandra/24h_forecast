@@ -2,7 +2,6 @@ import { StyledAccount, StyledButton, StyledHeader, StyledIconWrap, StyledItem, 
 import logo from "../../images/logo.png";
 import { IoIosPerson } from "react-icons/io";
 import { IconContext } from "react-icons";
-import { useState } from "react";
 
 export default function Header({openModal, username}) {
   return (
@@ -26,7 +25,7 @@ export default function Header({openModal, username}) {
       <StyledAccount>
         {username ? (<StyledUsername>{username}</StyledUsername>) : (<StyledButton type="button" onClick={() => openModal()}>Sign Up</StyledButton>)}
         <StyledIconWrap>
-          <IconContext.Provider value={{ color: "#e7eced"}}>
+          <IconContext.Provider value={{ color: "#e7eced", size: "50px"}}>
             <IoIosPerson/>
           </IconContext.Provider>
         </StyledIconWrap>

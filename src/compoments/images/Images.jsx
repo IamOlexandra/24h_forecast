@@ -4,10 +4,11 @@ import { StyledImages, StyledTitle,  StyledPlaceholderText} from "./styled.js";
 
 const BASE_URL = "https://pixabay.com/api/";
 const API_KEY = "55483797-7bf23ed8b2a2ba9e2eb875cf6";
-const CATEGORY = 'nature';
+const CATEGORY = "nature";
+const Q = "landscapes";
 const PER_PAGE = 5;
 const PAGE = 1;
-const URL = `${BASE_URL}?category=${CATEGORY}&per_page=${PER_PAGE}&page=${PAGE}&order=latest&orientation=horizontal&type=photo&key=${API_KEY}`;    
+const URL = `${BASE_URL}?category=${CATEGORY}&q=${Q}&per_page=${PER_PAGE}&page=${PAGE}&order=latest&orientation=horizontal&type=photo&key=${API_KEY}`;    
 
 
 export default function Images() {

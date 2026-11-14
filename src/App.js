@@ -11,6 +11,7 @@ import Footer from "./compoments/footer/Footer";
 import SignUp from "./compoments/sign_up/SignUp";
 
 import { API_KEY, BASE_URL } from "./constants";
+import HourlyChart from "./compoments/hourly/HourlyChart";
 const GEO_URL = `${BASE_URL}/geo/1.0/direct?&appid=${API_KEY}`;
 const NOW_URL = `${BASE_URL}/data/2.5/weather?&units=metric&appid=${API_KEY}`;
 
@@ -39,14 +40,14 @@ export default function App() {
     event.preventDefault();
     setUsername(newUsername);
     setIsModalOpened(false);
-    console.log(newUsername);
   }
 
   async function getCity(city) {
     try {
       let newCities = shownCities.slice(0, -1);
       const response = await fetch(GEO_URL + "&q=" + city.replaceAll(" ", "_"));
-      newCities.unshift(response);
+      const data = await response.json()
+      newCities.unshift({"lat": data[0].lat, "lon": data[0].lon});
       setShownCities(newCities);
     } catch(error) {
       console.error(error);
@@ -65,14 +66,23 @@ export default function App() {
   }
 
   useEffect(() => {
-    if(cityData !== null) {
-      return
-    }
     setCityData([]);
     shownCities.forEach(city => {
       getWeather(city);
     });
   }, [shownCities]);
+
+  async function refreshCity(index) {
+    try {
+      const response = await fetch(NOW_URL + "&lat=" + shownCities[index].lat + "&lon=" + shownCities[index].lon);
+      const data = await response.json();
+      console.log(cityData, index);
+      setCityData(prev => prev.filter((city, cityIndex) => cityIndex === index ? data : city));
+      console.log(data);
+    } catch(error) {
+      console.error(error);
+    }
+  }
 
   function changeOpenedDetailsCity(cityObject) {
     setOpenedDetailsCity(cityObject);
@@ -98,7 +108,7 @@ export default function App() {
       <Header openModal={openModal} username={username}/>
       <main>
         <Hero getCity={getCity}/>
-        <Cities cityData={cityData} changeOpenedDetailsCity={changeOpenedDetailsCity} changeOpenedHourlyCity={changeOpenedHourlyCity} changeOpenedDailyCity={changeOpenedDailyCity}/>
+        <Cities refreshCity={refreshCity} cityData={cityData} changeOpenedDetailsCity={changeOpenedDetailsCity} changeOpenedHourlyCity={changeOpenedHourlyCity} changeOpenedDailyCity={changeOpenedDailyCity}/>
         {openedDetailsCity && (
           <Properties cityObject={openedDetailsCity}/>
         )}

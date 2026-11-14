@@ -1,11 +1,19 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { StyledSwitcher, StyledButton, StyledInput, StyledLabel, StyledModal, StyledSignUp, StyledText, StyledTitle, StyledWrap, StyledForm } from "./styled.js";
 
 export default function SignUp({closeModal, changeUsername}) {
   const [option, setOption] = useState(0);
   const inputRef = useRef(null);
+  useEffect(() => {
+    return () => setOption(0);
+  }, []);
+  function handleClick(event) {
+    if(event.target.id === "backdrop") {
+      closeModal();
+    }
+  }
   return (
-    <StyledSignUp>
+    <StyledSignUp id="backdrop" onClick={handleClick}>
       <StyledModal>
         <StyledTitle>{option === 0 ? "Sign up" : "Log in"}</StyledTitle>
         <StyledForm onSubmit={(event) => changeUsername(event, inputRef.current.value)}>
