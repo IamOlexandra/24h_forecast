@@ -119,6 +119,27 @@ export const StyledImages = styled.section`
                     left: calc((25% - (175px * 0.4)) / 2);
                 }
             }
+            @media (max-width: 410px) {
+                &:nth-child(1) {
+                    left: calc((10% - (175px * 0.4)) / 2);
+                }
+
+                &:nth-child(2) {
+                    left: calc((10% - (175px * 0.6)) / 2);
+                }
+
+                &:nth-child(3) {
+                    left: calc((10% - (175px * 0.8)) / 2);
+                }
+
+                &:nth-child(4) {
+                    left: calc((10% - (175px * 0.6)) / 2);
+                }
+
+                &:nth-child(5) {
+                    left: calc((10% - (175px * 0.4)) / 2);
+                }
+            }
         `;
             export const StyledImage = styled.img`
                 height: 211px;

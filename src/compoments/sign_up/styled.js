@@ -17,6 +17,11 @@ export const StyledSignUp = styled.div`
         position: fixed;
         left: calc(50% - 200px);
         top: 20vh;
+
+        @media (max-width: 400px) {
+            width: 100%;
+            left: 0;
+        }
     `;
         export const StyledTitle = styled.h2`
             font-style: 20px;
@@ -66,6 +71,7 @@ export const StyledSignUp = styled.div`
             font-size: 10px;
             width: fit-content;
             margin: 0 auto;
+            text-align: center;
         `;
             export const StyledSwitcher = styled.button`
                 font-size: inherit;
