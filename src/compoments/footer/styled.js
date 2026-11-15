@@ -7,11 +7,21 @@ export const StyledFooter = styled.section`
 `;
     export const StyledContentWrap = styled.div`
         width: 549px;
+        max-width: 100%;
         display: flex;
+        gap: 30px 60px;
         justify-content: space-between;
+        flex-wrap: wrap;
+        @media (max-width: 577px) {
+            justify-content: center;
+        }
     `;
         export const StyledColumn = styled.div`
-        
+            &:nth-child(3) h3 {
+                @media (max-width: 577px) {
+                    text-align: center;
+                }
+            }
         `;
             export const StyledLogoLink = styled.a`
                 display: flex;

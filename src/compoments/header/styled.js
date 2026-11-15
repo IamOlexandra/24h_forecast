@@ -6,12 +6,27 @@ export const StyledHeader = styled.section`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 700px) {
+        flex-direction: column;
+        gap: 10px 0;
+    }
 `;
     export const StyledNavigation = styled.nav`
         width: 455px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: 830px) {
+            width: 380px;
+        }
+        @media (max-width: 419px) {
+            width: 380px;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
     `;
         export const StyledLogoLink = styled.a`
             width: 82px;

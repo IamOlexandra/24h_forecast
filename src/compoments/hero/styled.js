@@ -12,12 +12,23 @@ export const StyledHero = styled.section`
         font-size: 40px;
         text-align: center;
         margin-bottom: 80px;
+
+        @media (max-width: 600px) {
+            font-size: 30px;
+        }
     `;
     export const StyledWrap = styled.div`
         width: fit-content;
         min-height: 144px;
         display: flex;
         margin: 0 auto 80px auto;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+            max-width: 261px;
+            border-left: solid 3px var(--background);
+            padding-left: 25px;
+        }
     `;
         export const StyledText = styled.p`
             color: var(--background);
@@ -26,12 +37,25 @@ export const StyledHero = styled.section`
             max-width: 400px;
             text-align: right;
             font-size: 24px;
+
+            @media (max-width: 600px) {
+                padding-right: 0px;
+                border-right: none;
+                text-align: left;
+                margin-bottom: 20px;
+                font-size: 20px;
+            }
         `;
         export const StyledDate = styled.p`
             color: var(--background);
             padding-left: 51px;
             max-width: 399px;
             font-size: 24px;
+
+            @media (max-width: 600px) {
+                padding-left: 0px;
+                font-size: 20px;
+            }
         `;
     export const StyledInputWrap = styled.div`
         margin: 0 auto;

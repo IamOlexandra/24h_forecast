@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { StyledHourly, StyledChart, StyledTitle, StyledWrap } from "./styled.js";
+import { StyledHourly, StyledTitle, StyledWrap } from "./styled.js";
 
 import { API_KEY, BASE_URL } from "../../constants.js";
 import HourlyChart from "./HourlyChart.jsx";

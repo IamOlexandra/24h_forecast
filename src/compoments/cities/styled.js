@@ -6,16 +6,21 @@ export const StyledCities = styled.section`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 60px 0;
+    gap: 60px 50px;
+
+    @media (max-width: 1120px) {
+        justify-content: center;
+    }
 `;
     export const StyledItem = styled.div`
         background-color: var(--element1);
         padding: 15px 30px 15px 30px;
         border-radius: 20px;
-        width: 320px;
 
-        &:last-child {
-            justify-self: center
+        @media (max-width: 1120px) {
+            &:last-child {
+                justify-self: center;
+            }
         }
     `;
         export const StyledLocation = styled.div`
